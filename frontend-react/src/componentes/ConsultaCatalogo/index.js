@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import './style.css'
 
 function ConsultaCatalogo(){
@@ -10,26 +10,36 @@ function ConsultaCatalogo(){
       try{
         const resposta = await fetch("http://localhost:8080/api/v1/produtos")
         const dados = await resposta.json()
-        console.log(JSON.stringify(dados));
-  
+        console.log(dados);
         setProdutos(dados)
     
       }catch(error){
-        setErro(error.message)
-        console.log(erro)
+        setErro(error)
+        console.error(erro)
       }
     }
 
     consulta()
-
-  
-
+    
   }, [])
-  
+
   return(
     <div className='catalogo'>
       <h3>Consulta Catalogo</h3>
-      {JSON.stringify(produtos)}
+      {
+        
+        produtos.map((item) => {
+          return (
+            <div className='container-catalogo'>
+              	<h4>{item.descricao}</h4>
+              	<span>Categoria: {item.categoria}</span>
+              	<span>Custo: {item.custo}</span>
+              	<span>Quantidade no estoque: {item.quantidadeNoEstoque}</span>
+            </div>
+          )
+        })
+
+      }
     </div>
   )
 }
