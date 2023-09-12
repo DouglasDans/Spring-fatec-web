@@ -27,7 +27,6 @@ function ConsultaCatalogo(){
     <div className='catalogo'>
       <h3>Consulta Catalogo</h3>
       {
-        
         produtos.map((item) => {
           return (
             <div className='container-catalogo'>
