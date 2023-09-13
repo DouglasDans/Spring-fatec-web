@@ -30,13 +30,18 @@ public class ProdutoServico implements IProdutoServico {
 		for (Produto p : listaProduto) {
 			for (Imagem i : listaImagem) {
 				if (p.getId().equals(i.getId())) {
-					c = new Catalogo(p.getId(), p.getDescricao(), p.getCategoria(),
-							p.getCusto(), p.getQuantidadeNoEstoque(), i.getArquivo());
+					c = new Catalogo(
+						p.getId(), 
+						p.getDescricao(), 
+						p.getCategoria(), 
+						p.getCusto(), 
+						p.getQuantidadeNoEstoque(), 
+						i.getArquivo());
+
 					lista.add(c);
 				}
 			}
 		}
 		return lista;
 	}
-
 }

@@ -31,13 +31,13 @@ public class ImagemServico implements IImagemServico {
       // Obter informações sobre o arquivo - espera um tipo formdata chave/file
       // **********************************************************
 
-      logger.info(">>>>>> servico salvar imagem - iniciado...");
+      logger.info("[Servico] salvar imagem - iniciado...");
 
-      Optional<Produto> p = produtoRepository.findById(id);
-      
-      if (p.isPresent()) {
+      Optional<Produto> produto = produtoRepository.findById(id);
 
-         logger.info(">>>>>> servico salvar imagem - produto encontrado");
+      if (produto.isPresent()) {
+
+         logger.info("[servico] salvar imagem - produto encontrado");
 
          String nome = arquivo.getOriginalFilename();
          Path caminhoArquivo = Paths.get("imagens/" + nome);
@@ -57,7 +57,7 @@ public class ImagemServico implements IImagemServico {
          // ***********************************************************
          // Files.write(caminhoArquivo, arquivo.getBytes());
 
-         return Optional.of(imagemRepository.save(imagem));
+         return Optional.of(imagemRepository.save(imagem)); // Salva a imagem no server
       } else {
          logger.info(">>>>>> servico salvar imagem - id nao encontrado");
          return Optional.empty();
@@ -72,8 +72,11 @@ public class ImagemServico implements IImagemServico {
 
    @Override
    public byte[] getImagem(String nomeArquivo) {
-      // TODO Auto-generated method stub
-      return null;
+      Optional<Imagem> dbImagem = imagemRepository.findByNome(nomeArquivo);
+      if (dbImagem.isPresent())
+         return dbImagem.get().getArquivo();
+      else
+         return new byte[0];
    }
 
    @Override

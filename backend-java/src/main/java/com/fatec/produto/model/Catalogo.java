@@ -1,7 +1,5 @@
 package com.fatec.produto.model;
 
-import java.util.Objects;
-
 public class Catalogo {
    private Long id;
    private String descricao;

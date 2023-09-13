@@ -13,6 +13,7 @@ public class Imagem {
 
    @Column (name = "arquivo", length = 28672)
    private byte[] arquivo;
+   
    public Imagem() {
       
    }
