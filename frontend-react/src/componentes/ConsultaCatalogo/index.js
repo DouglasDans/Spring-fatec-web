@@ -1,13 +1,8 @@
-import {
-   Fragment,
-   useEffect,
-   useState
-} from "react";
-
+import { Fragment, useEffect, useState } from "react";
 import "./style.css";
-import Card from "./Card";
 
 import ConverteBase64ToImage from "./ConvertBase64ToImage";
+import Card from "./Card";
 
 function ConsultaCatalogo() {
    const [produtos, setProdutos] = useState([]);
@@ -17,7 +12,6 @@ function ConsultaCatalogo() {
          try {
             const resposta = await fetch("http://localhost:8080/api/v1/produtos");
             const dados = await resposta.json();
-            console.log(dados);
             setProdutos(dados);
          } catch (error) {
             setErro(error);
@@ -28,16 +22,17 @@ function ConsultaCatalogo() {
       consulta();
    }, []);
 
-   produtos.map(item => {
-      
-      return (
-         <div>
-            <Card img={ConverteBase64ToImage(item.imagem)} data={item} />
-            <Card/>
-         </div>
-         
-      )
-   })
+   return (
+      <div className="container-catalogo">
+         {
+            produtos.map(item => {
+               return (
+                  <Card img={ConverteBase64ToImage(item.imagem)} data={item} />
+               )
+            })
+         }
+      </div> 
+   )
 }
 
 export default ConsultaCatalogo;

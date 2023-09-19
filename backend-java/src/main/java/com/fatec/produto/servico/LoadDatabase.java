@@ -42,7 +42,7 @@ public class LoadDatabase {
 
 			// ****************************************************************
 
-			Path path = Paths.get("C:\\Users\\dti\\Downloads\\sbt\\produto1.jpg");
+			Path path = Paths.get("C:\\Users\\dougl\\Downloads\\sbt\\produto1.jpg");
 			InputStream file = Files.newInputStream(path);
 			byte[] arquivo1 = file.readAllBytes();
 			Imagem imagem = new Imagem();
@@ -53,7 +53,7 @@ public class LoadDatabase {
 			logger.info(">>>>> loaddatabase -> upload de arquivo imagem realizado => " + arquivo1.length + "bytes");
 			imagemRepository.save(imagem);
 			
-			Path path2 = Paths.get("C:\\Users\\dti\\Downloads\\sbt\\produto2.jpg");
+			Path path2 = Paths.get("C:\\Users\\dougl\\Downloads\\sbt\\produto2.jpg");
 			InputStream file2 = Files.newInputStream(path2);
 			byte[] arquivo2 = file2.readAllBytes();
 			Imagem imagem2 = new Imagem();
@@ -64,7 +64,7 @@ public class LoadDatabase {
 			logger.info(">>>>> loaddatabase -> upload de arquivo imagem realizado => " + arquivo2.length + "bytes");
 			imagemRepository.save(imagem2);
 			
-			Path path3 = Paths.get("C:\\Users\\dti\\Downloads\\sbt\\produto3.jpg");
+			Path path3 = Paths.get("C:\\Users\\dougl\\Downloads\\sbt\\produto3.jpg");
 			InputStream file3 = Files.newInputStream(path3);
 			byte[] arquivo3 = file3.readAllBytes();
 			Imagem imagem3 = new Imagem();
