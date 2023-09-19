@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -41,20 +42,41 @@ public class LoadDatabase {
 
 			// ****************************************************************
 
-			Path path = Paths.get("C:/Users/dougl/Downloads/chop.png");
+			Path path = Paths.get("C:\\Users\\dti\\Downloads\\sbt\\produto1.jpg");
 			InputStream file = Files.newInputStream(path);
 			byte[] arquivo1 = file.readAllBytes();
 			Imagem imagem = new Imagem();
 			imagem.setId(1L); // associa o id do produto ao id da imagem
-			imagem.setNome("chop.png");
+			imagem.setNome("produto1.jpg");
 			imagem.setCaminho("imagens/" + imagem.getNome());
 			imagem.setArquivo(arquivo1);
 			logger.info(">>>>> loaddatabase -> upload de arquivo imagem realizado => " + arquivo1.length + "bytes");
 			imagemRepository.save(imagem);
+			
+			Path path2 = Paths.get("C:\\Users\\dti\\Downloads\\sbt\\produto2.jpg");
+			InputStream file2 = Files.newInputStream(path2);
+			byte[] arquivo2 = file2.readAllBytes();
+			Imagem imagem2 = new Imagem();
+			imagem2.setId(2L); // associa o id do produto ao id da imagem
+			imagem2.setNome("produto2.jpg");
+			imagem2.setCaminho("imagens/" + imagem2.getNome());
+			imagem2.setArquivo(arquivo2);
+			logger.info(">>>>> loaddatabase -> upload de arquivo imagem realizado => " + arquivo2.length + "bytes");
+			imagemRepository.save(imagem2);
+			
+			Path path3 = Paths.get("C:\\Users\\dti\\Downloads\\sbt\\produto3.jpg");
+			InputStream file3 = Files.newInputStream(path3);
+			byte[] arquivo3 = file3.readAllBytes();
+			Imagem imagem3 = new Imagem();
+			imagem3.setId(3L); // associa o id do produto ao id da imagem
+			imagem3.setNome("produto3.jpg");
+			imagem3.setCaminho("imagens/" + imagem3.getNome());
+			imagem3.setArquivo(arquivo3);
+			logger.info(">>>>> loaddatabase -> upload de arquivo imagem realizado => " + arquivo3.length + "bytes");
+			imagemRepository.save(imagem3);
 
 			// ****************************************************************
 
-			
 		};
 
 	}
