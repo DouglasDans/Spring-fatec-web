@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "./style.css"
 
 export default function Card(props){
    const img = props.img
-   console.log(props);
 
    return (
       <div className='card'>
@@ -14,7 +13,6 @@ export default function Card(props){
             <span><b>Quantidade estoque:</b> {props.data.quantidadeNoEstoque}</span>
             <span><b>Descrição:</b> {props.data.descricao}</span>
          </div>
-         
       </div>
    )
 }  

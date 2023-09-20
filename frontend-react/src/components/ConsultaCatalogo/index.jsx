@@ -3,23 +3,26 @@ import "./style.css";
 
 import ConverteBase64ToImage from "./ConvertBase64ToImage";
 import Card from "./Card";
+import getAPI from "../../service/API";
 
 function ConsultaCatalogo() {
    const [produtos, setProdutos] = useState([]);
    const [erro, setErro] = useState([]);
+   
    useEffect(() => {
-      const consulta = async () => {
-         try {
-            const resposta = await fetch("http://localhost:8080/api/v1/produtos");
-            const dados = await resposta.json();
-            setProdutos(dados);
-         } catch (error) {
-            setErro(error);
-            console.error(erro);
-         }
-      };
 
-      consulta();
+      getAPI("http://localhost:8080/api/v1/produtos").then(data => {
+         if (data.dados) {
+            setProdutos(data.dados)
+         } else {
+            setErro(data.error)
+            console.error(erro)
+         }
+      }).catch(error => {
+         setErro(error)
+         console.error(erro)
+      })
+
    }, []);
 
    return (
