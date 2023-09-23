@@ -1,7 +1,7 @@
 import {Route, Routes} from "react-router-dom"
 import "./styles.css";
-import Home from "./view/Home";
-import Catalogo from "./view/Catalogo";
+import Home from "./pages/Home";
+import Catalogo from "./pages/Catalogo";
 
 
 export default function App() {
