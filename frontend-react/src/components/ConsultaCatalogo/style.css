@@ -1,7 +1,10 @@
 .container-catalogo{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.5rem;
+
+    justify-content: center;
 
     margin: 2rem;
 }

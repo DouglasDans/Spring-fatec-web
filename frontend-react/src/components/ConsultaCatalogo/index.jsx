@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import "./style.css";
 
-import ConverteBase64ToImage from "./ConvertBase64ToImage";
+import ConverteBase64ToImage from "../ConvertBase64ToImage";
 import Card from "./Card";
 import getAPI from "../../service/API";
 
