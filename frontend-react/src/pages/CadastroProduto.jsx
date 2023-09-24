@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import FormCadastroProduto from '../components/FormCadastroProduto'
+import AppNavbar from '../components/AppNavbar'
 
-function CadastroProduto() {
-  return (
-    <div>CadastroProduto</div>
-  )
+export default function CadastroProduto() {
+   return (
+      <Fragment>
+         <AppNavbar/>
+         <FormCadastroProduto/>
+      </Fragment>
+   )
 }
-
-export default CadastroProduto

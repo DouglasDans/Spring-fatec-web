@@ -1,5 +1,5 @@
 
-export default async function getAPI(endpoint) {
+async function get(endpoint) {
    let obj = {}
    
    try {
@@ -23,7 +23,7 @@ export default async function getAPI(endpoint) {
    return obj
 }
 
-async function postAPI(endpoint, body) {
+async function post(endpoint, body) {
    const response = await fetch("http://localhost:8080/api/v1/produtos", {
       method: "POST",
       headers: {
@@ -34,3 +34,5 @@ async function postAPI(endpoint, body) {
 
    return response
 }
+
+export default { get, post }

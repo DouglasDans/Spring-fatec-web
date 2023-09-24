@@ -29,12 +29,10 @@ const AppNavbar = () => {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="justify-content-end" style={{ width: "100%" }} navbar>
           <NavItem>
-            <NavLink href="https://www.fateczl.edu.br//">Fatec ZL</NavLink>
+            <NavLink href="/produtos/catalogo">Consultar Catalogo</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="https://inova.cps.sp.gov.br/escola-de-inovadores//">
-              Escola de Invoadores
-            </NavLink>
+            <NavLink href="/produtos/cadastro">Cadastrar Produto</NavLink>
           </NavItem>
         </Nav>
       </Collapse>

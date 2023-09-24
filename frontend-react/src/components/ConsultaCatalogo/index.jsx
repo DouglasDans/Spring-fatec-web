@@ -3,7 +3,7 @@ import "./style.css";
 
 import ConverteBase64ToImage from "../ConvertBase64ToImage";
 import Card from "./Card";
-import getAPI from "../../service/API";
+import API from "../../service/API";
 
 function ConsultaCatalogo() {
    const [produtos, setProdutos] = useState([]);
@@ -11,7 +11,7 @@ function ConsultaCatalogo() {
    
    useEffect(() => {
 
-      getAPI("http://localhost:8080/api/v1/produtos").then(data => {
+      API.get("http://localhost:8080/api/v1/produtos").then(data => {
          if (data.dados) {
             setProdutos(data.dados)
          } else {
